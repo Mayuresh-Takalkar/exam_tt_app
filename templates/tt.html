@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block title %}Exam Timetable{% endblock %}
+{% block body_class %}{% endblock %}
+
+{% block content %}
+<h2>📅 Your Exam Timetable</h2>
+<table class="tt-table">
+<tr>
+    <th>Date</th>
+    <th>Subject</th>
+    <th>Time</th>
+    <th>Study Material</th>
+</tr>
+<tr>
+    <td>2025-11-01</td>
+    <td>Physics</td>
+    <td>9:00 AM - 12:00 PM</td>
+    <td><a href="https://byjus.com/ncert-solutions-class-12-physics/" target="_blank">Link</a></td>
+</tr>
+<tr>
+    <td>2025-11-03</td>
+    <td>Chemistry</td>
+    <td>9:00 AM - 12:00 PM</td>
+    <td><a href="https://byjus.com/ncert-solutions-class-12-chemistry/" target="_blank">Link</a></td>
+</tr>
+<tr>
+    <td>2025-11-05</td>
+    <td>Maths</td>
+    <td>9:00 AM - 12:00 PM</td>
+    <td><a href="https://byjus.com/ncert-solutions-class-12-maths/" target="_blank">Link</a></td>
+</tr>
+<tr>
+    <td>2025-11-07</td>
+    <td>English</td>
+    <td>9:00 AM - 12:00 PM</td>
+    <td><a href="https://byjus.com/ncert-solutions-class-12-english/" target="_blank">Link</a></td>
+</tr>
+<tr>
+    <td>2025-11-09</td>
+    <td>Hindi</td>
+    <td>9:00 AM - 12:00 PM</td>
+    <td><a href="https://www.vedantu.com/ncert-solutions/ncert-solutions-class-12-hindi" target="_blank">Link</a></td>
+</tr>
+</table>
+
+<div class="notepad-container">
+<h3>📝 Rough Work / Notes</h3>
+<textarea id="notepad" placeholder="Write your notes here..."></textarea><br>
+<button id="saveNote">💾 Save Note</button>
+<button id="clearNote">🧹 Clear</button>
+</div>
+{% endblock %}

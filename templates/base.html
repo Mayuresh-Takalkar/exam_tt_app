@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{% block title %}Exam TT App{% endblock %}</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="{% block body_class %}{% endblock %}">
+
+<header>
+    <h1>Exam TT App</h1>
+    <nav>
+        {% if session.get('user') %}
+            <a href="{{ url_for('guide') }}">Guide</a>
+            <a href="{{ url_for('tt') }}">Exam Timetable</a>
+            <a href="{{ url_for('logout') }}">Logout</a>
+        {% endif %}
+    </nav>
+    {% if session.get('user') %}
+    <div class="top-buttons">
+        <button id="darkModeToggle" class="btn">🌓 Dark Mode</button>
+        <button id="screenshotBtn" class="btn">📸 Screenshot</button>
+    </div>
+    {% endif %}
+</header>
+
+<main class="container">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, msg in messages %}
+            <div class="flash {{ category }}">{{ msg }}</div>
+        {% endfor %}
+    {% endif %}
+    {% endwith %}
+    {% block content %}{% endblock %}
+</main>
+
+<footer>
+    <p>&copy; 2025 Exam TT App — All rights reserved</p>
+</footer>
+
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
